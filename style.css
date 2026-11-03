@@ -1,0 +1,495 @@
+/* ================================================= */
+/* 1. USTAWIENIA OGÓLNE I ZMIENNE                    */
+/* ================================================= */
+:root {
+    --kolor-czerwony: #d5001c;
+    --kolor-ciemny: #111214;
+    --kolor-tekst: #5f636b;
+    --kolor-tlo: #f3f3f4;
+    --kolor-linie: #e0e0e3;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    color: var(--kolor-ciemny);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    color: var(--kolor-tekst);
+}
+
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ================================================= */
+/* 2. NAGŁÓWEK I MENU                                */
+/* ================================================= */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--kolor-tlo);
+    border-bottom: 1px solid var(--kolor-linie);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.logo span {
+    color: var(--kolor-czerwony);
+}
+
+nav ul {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+nav a:hover, nav a.on {
+    color: var(--kolor-czerwony);
+}
+
+/* ================================================= */
+/* 3. PRZYCISKI                                      */
+/* ================================================= */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    border: 2px solid var(--kolor-czerwony);
+    transition: 0.3s;
+}
+
+.btn-fill {
+    background-color: var(--kolor-czerwony);
+    color: #ffffff;
+}
+
+.btn-fill:hover {
+    background-color: #b00017;
+}
+
+.btn-line {
+    color: var(--kolor-czerwony);
+}
+
+/* ================================================= */
+/* 4. SEKCJA HERO                                    */
+/* ================================================= */
+.hero {
+    background-color: var(--kolor-tlo);
+    padding: 56px 0 110px 0;
+}
+
+.hero-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.small-title {
+    color: var(--kolor-czerwony);
+    font-weight: 600;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.hero-text h2 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--kolor-tekst);
+}
+
+.btns {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.portrait {
+    position: relative;
+    width: 380px;
+    height: 380px;
+    flex-shrink: 0;
+}
+
+.portrait::before {
+    content: "";
+    position: absolute;
+    inset: 4% 12% 12% 4%;
+    background-color: var(--kolor-czerwony);
+    border-radius: 50%;
+}
+
+.portrait::after {
+    content: "";
+    position: absolute;
+    right: -6%;
+    top: 0;
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: rgba(201, 162, 74, 0.28);
+}
+
+.photo {
+    position: absolute;
+    z-index: 1;
+    right: 6%;
+    bottom: 0;
+    width: 68%;
+    height: 92%;
+    border-radius: 20px;
+    background: url('avatar.jpg') center/cover, linear-gradient(160deg, #3a3a40, #111214);
+}
+
+/* ================================================= */
+/* 5. PASEK STATYSTYK                                */
+/* ================================================= */
+.stats-bar {
+    position: relative;
+    z-index: 2;
+    margin-top: -52px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 12px 40px rgba(17, 18, 20, 0.14);
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 32px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-ic {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--kolor-czerwony);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.stat-item b {
+    display: block;
+    line-height: 1.2;
+}
+
+.stat-item span {
+    font-size: 0.8rem;
+    color: var(--kolor-czerwony);
+}
+
+/* ================================================= */
+/* 6. SEKCJA MODELE (KAFELKI)                        */
+/* ================================================= */
+.section-padding {
+    padding: 80px 0;
+}
+
+.services-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.services-grid > div:first-child {
+    flex: 1;
+}
+
+.services-grid h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin: 6px 0 20px 0;
+}
+
+.arrows {
+    display: flex;
+    gap: 10px;
+}
+
+.arrow-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--kolor-linie);
+    color: var(--kolor-ciemny);
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.arrow-btn.go {
+    background-color: var(--kolor-czerwony);
+    color: #ffffff;
+}
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 12px 4px 24px 4px;
+    flex: 1.5;
+    scrollbar-width: none;
+}
+
+.cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    min-width: 200px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 26px 20px;
+    text-align: center;
+    box-shadow: 0 8px 28px rgba(17, 18, 20, 0.08);
+}
+
+.card-ic {
+    margin: 0 auto 14px auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+}
+
+.card h4 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.card p {
+    font-size: 0.8rem;
+}
+
+/* ================================================= */
+/* 7. SEKCJA OCENY (PASKI POSTĘPU)                   */
+/* ================================================= */
+.skills-section {
+    background-color: var(--kolor-tlo);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 36px;
+}
+
+.section-header h3 {
+    font-size: 1.6rem;
+}
+
+.bars-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 56px;
+}
+
+.bar-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    background-color: #d1d5db;
+    overflow: hidden;
+}
+
+.fill-bar {
+    height: 100%;
+    background-color: var(--kolor-czerwony);
+    border-radius: 5px;
+}
+
+/* ================================================= */
+/* 8. SEKCJA GALERIA                                 */
+/* ================================================= */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--kolor-ciemny);
+    cursor: pointer;
+}
+
+.tab-btn.on {
+    color: var(--kolor-czerwony);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    max-width: 760px;
+    margin: 24px auto 0 auto;
+}
+
+.gallery-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tile {
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end;
+    color: #ffffff;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 -70px 50px -40px rgba(0, 0, 0, 0.6);
+}
+
+.tall { height: 260px; }
+.mid { height: 210px; }
+.short { height: 160px; }
+
+/* Tła zdjęć w galerii */
+.t1 { background: url('carrera.jpg') center/cover, linear-gradient(160deg, #d5001c, #4a000b); }
+.t2 { background: url('gt3.jpg') center/cover, linear-gradient(160deg, #475569, #0f172a); }
+.t3 { background: url('356.jpg') center/cover, linear-gradient(160deg, #d4d4d8, #6b6e75); }
+.t4 { background: url('taycan.jpg') center/cover, linear-gradient(160deg, #38bdf8, #1e3a8a); }
+.t5 { background: url('cayenne.jpg') center/cover, linear-gradient(160deg, #a3a3a3, #262626); }
+.t6 { background: url('macan.jpg') center/cover, linear-gradient(160deg, #d9b45a, #5c4510); }
+
+/* ================================================= */
+/* 9. STOPKA                                         */
+/* ================================================= */
+footer {
+    background-color: var(--kolor-ciemny);
+    color: #ffffff;
+    text-align: center;
+    padding: 56px 0 32px 0;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #cbd5e1;
+    margin-bottom: 20px;
+}
+
+footer small {
+    display: block;
+    margin-top: 32px;
+    color: #94a3b8;
+}
+
+/* ================================================= */
+/* 10. RWD (RESPONSYWNOŚĆ DLA URZĄDZEŃ MOBILNYCH)    */
+/* ================================================= */
+@media(max-width: 820px) {
+    .hero-grid, .services-grid {
+        flex-direction: column;
+    }
+    .portrait {
+        width: 100%;
+        max-width: 320px;
+        height: 320px;
+    }
+    .stats-bar {
+        flex-direction: column;
+        border-radius: 24px;
+        margin-top: -30px;
+        gap: 16px;
+    }
+    .bars-grid {
+        grid-template-columns: 1fr;
+    }
+    nav ul {
+        gap: 14px;
+        font-size: 0.8rem;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
